@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./CreateTodo.css"
+import { createTodo } from "../services/http"
 
 export function CreateTodo({setShowCreate}) {
 
@@ -19,12 +20,13 @@ export function CreateTodo({setShowCreate}) {
         const newTodo = {
             title,
             description
-        }
+        };
 
-        console.log(newTodo)
+        createTodo(newTodo).then(()=>{
 
-
-    }
+            close()
+        })
+    };
 
     return <div className="overlay">
 

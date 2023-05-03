@@ -1,6 +1,5 @@
-
 import { TodoItem } from "./TodoItem"
-
+import "./TodoList.css"
 
 export function TodoList({todos = []}) {
 
@@ -8,12 +7,13 @@ export function TodoList({todos = []}) {
   
       return <TodoItem todo={todo} key={todo.id}></TodoItem>
   
-    })
+    });
   
-    return <div>
+    return ( <div className="todo-list">
   
       {todoItems}
   
     </div>
+    );
   }
   

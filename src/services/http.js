@@ -19,33 +19,37 @@ function createQueryParams(params) {
     return "?" + new URLSearchParams(Object.entries(params)).toString()
 }
 
-export async function GetTodos(params) {
-    
-    const test = createQueryParams()
-    console.log(test)
+export async function getTodos(params) {
 
-    const todos = todoApi("/todos", params)
-    console.log("jipii")
-
+    const todos = todoApi("/todos" + createQueryParams(params))
     return todos
 }
 
-export async function CreateTodo(newTodo) {
+export async function createTodo(newTodo) {
+
+    const todo = await todoApi("/todos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTodo),
+      });
+
+    return todo
+}
+
+export async function removeTodoById(id) {
 
 }
 
-export async function RemoveTodoById(id) {
+export async function getTodoById(id) {
 
 }
 
-export async function GetTodoById(id) {
+export async function updateTodoWithId(id, editedTodo) {
 
 }
 
-export async function UpdateTodoWithId(id, editedTodo) {
-
-}
-
-export async function ToggleDoneWithId(id, currentDone) {
+export async function toggleDoneWithId(id, currentDone) {
 
 }
