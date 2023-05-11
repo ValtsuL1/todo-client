@@ -1,11 +1,8 @@
 
-export function TodoButtons() {
-
+export function TodoButtons({buttons}) {
 
     return <div>
-        <button>Kaikki</button>
-        <button>Tekemättä</button>
-        <button>Tehdyt</button>
+        {buttons}
     </div>
 
 }

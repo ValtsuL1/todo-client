@@ -1,11 +1,11 @@
 import { TodoItem } from "./TodoItem"
 import "./TodoList.css"
 
-export function TodoList({todos = []}) {
+export function TodoList({todos = [], setSelectedId}) {
 
     const todoItems = todos.map((todo)=>{
   
-      return <TodoItem todo={todo} key={todo.id}></TodoItem>
+      return <TodoItem todo={todo} key={todo.id} setSelectedId={setSelectedId}></TodoItem>
   
     });
   
