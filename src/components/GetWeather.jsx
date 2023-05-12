@@ -18,11 +18,9 @@ export function GetWeather({setShowWeather}){
         setWeather(weather)
     );
 
-    const weatherStr = weather.toString()
-    console.log(weatherStr)
+    const weatherArray = weather.toString().split(" ")
 
-    let weatherArray = weatherStr.split(" ")
-    console.log("array" + weatherArray)
+    // const weatherArray = weatherStr.split(" ")
 
     const weatherTemp = weatherArray[1]
     const weatherHum = weatherArray[4]
