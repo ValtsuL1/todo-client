@@ -32,7 +32,7 @@ export function GetWeather({setShowWeather}){
 
 
     return (
-        <Overlay close={close} headerTitle={"Sää"}>
+        <Overlay close={close} headerTitle={"Sää, Rovaniemi"}>
             <div>
                 <p>Lämpötila: {weatherTemp} °C</p>
                 <p>Ilmankosteus: {weatherHum} %</p>
