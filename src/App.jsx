@@ -6,6 +6,8 @@ import { CreateTodo } from "./components/CreateTodo"
 import { TodoList } from "./components/TodoList"
 import { getTodoById, getTodos } from "./services/todos"
 import { TodoView } from "./components/TodoView"
+import { WeatherButton } from "./components/GetWeatherButton"
+import { GetWeather } from "./components/GetWeather"
 
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
     },
     ];
 
+  const [showWeather, setShowWeather] = useState(false)
   const [showCreate, setShowCreate] = useState(false);
   const [todos, setTodos] = useState([]);
   const [activeKey, setActiveKey] = useState(buttonData[1].active);
@@ -63,6 +66,8 @@ function App() {
     <CreateButton onClicked={()=> setShowCreate(!showCreate)}></CreateButton>
     {showCreate && <CreateTodo setShowCreate={setShowCreate}></CreateTodo>}
     {selectedTodo && <TodoView setShowCreate={()=>setSelectedTodo(null)} initialTodo={selectedTodo}></TodoView>}
+    <WeatherButton onClicked={()=> setShowWeather(!showWeather)}></WeatherButton>
+    {showWeather && <GetWeather setShowWeather={setShowWeather}></GetWeather>}
     </>
   );
 }

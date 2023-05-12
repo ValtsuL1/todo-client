@@ -74,3 +74,9 @@ export async function toggleDoneWithId(id, currentDone) {
 
     return todo
 }
+
+export async function getWeather() {
+
+    const weather = await todoApi("/weather" + "?country=" + "rovaniemi")
+    return weather
+}
